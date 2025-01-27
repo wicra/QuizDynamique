@@ -1,0 +1,52 @@
+[
+    {   
+        "question": "Que signifie HTML ?",
+        "choices": ["Hyper Text Markup Language", "Outil de Marquage Hypertexte", "Hyperliens et Langage de Marquage de Texte", "Langage de Marquage d'Entraîneur Hyper"],
+        "correct": 0
+    },
+    {   
+        "question": "Quelle balise HTML est utilisée pour créer un lien hypertexte ?",
+        "choices": ["<a>", "<link>", "<href>", "<url>"],
+        "correct": 0
+    },
+    {
+        "question": "Quel est le rôle de CSS dans la création de sites web ?",
+        "choices": ["Structurer le contenu", "Ajouter du style et de la mise en page", "Créer des liens hypertexte", "Gérer les bases de données"],
+        "correct": 1
+    },
+    {
+        "question": "Quelle propriété CSS est utilisée pour changer la couleur de fond ?",
+        "choices": ["color", "background-color", "font-color", "bgcolor"],
+        "correct": 1
+    },
+    {
+        "question": "Quelle méthode JavaScript est utilisée pour sélectionner un élément par son ID ?",
+        "choices": ["getElementById", "querySelector", "getElementByClass", "getElementByTag"],
+        "correct": 0
+    },
+    {
+        "question": "Quel événement JavaScript est déclenché lorsqu'un utilisateur clique sur un élément ?",
+        "choices": ["onclick", "onmouseover", "onchange", "onload"],
+        "correct": 0
+    },
+    {
+        "question": "Quelle balise HTML est utilisée pour insérer une image ?",
+        "choices": ["<img>", "<image>", "<picture>", "<src>"],
+        "correct": 0
+    },
+    {
+        "question": "Quel attribut HTML définit le texte alternatif d'une image ?",
+        "choices": ["alt", "title", "src", "description"],
+        "correct": 0
+    },
+    {
+        "question": "Quel langage est principalement utilisé pour la programmation côté client dans les pages web ?",
+        "choices": ["JavaScript", "PHP", "Python", "Java"],
+        "correct": 0
+    },
+    {
+        "question": "Quelle balise HTML est utilisée pour définir un titre de page ?",
+        "choices": ["<title>", "<head>", "<header>", "<meta>"],
+        "correct": 0
+    }
+]
