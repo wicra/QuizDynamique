@@ -263,52 +263,52 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <button type="submit" class="choice">Commencer le Quiz</button>
             </form>
 
-        <?php else: ?>
-            <!-- Quiz en cours -->
-            <?php 
-            $quizState = json_decode($_COOKIE['quiz_state'], true);
-            $question = $questions[$quizState['current_question']];
-            ?>
-            <div id="timer">Temps restant : <span id="time">15</span> secondes</div>
-            
-            <div class="question">
-                <h3><?php echo htmlspecialchars($question['question']); ?></h3>
-            </div>
-            
-            <form method="POST" id="quiz-form">
-                <div class="choices">
-                    <?php foreach ($question['choices'] as $choiceIndex => $choice): ?>
-                        <button type="submit" 
-                                name="answer" 
-                                value="<?php echo $choiceIndex; ?>" 
-                                class="choice">
-                            <?php echo htmlspecialchars($choice); ?>
-                        </button>
-                    <?php endforeach; ?>
+            <?php else: ?>
+                <!-- Quiz en cours -->
+                <?php 
+                $quizState = json_decode($_COOKIE['quiz_state'], true);
+                $question = $questions[$quizState['current_question']];
+                ?>
+                <div id="timer">Temps restant : <span id="time">15</span> secondes</div>
+                
+                <div class="question">
+                    <h3><?php echo htmlspecialchars($question['question']); ?></h3>
                 </div>
-            </form>
-        <?php endif; ?>
+                
+                <form method="POST" id="quiz-form">
+                    <div class="choices">
+                        <?php foreach ($question['choices'] as $choiceIndex => $choice): ?>
+                            <button type="submit" 
+                                    name="answer" 
+                                    value="<?php echo $choiceIndex; ?>" 
+                                    class="choice">
+                                <?php echo htmlspecialchars($choice); ?>
+                            </button>
+                        <?php endforeach; ?>
+                    </div>
+                </form>
+            <?php endif; ?>
     </div>
 
     <script>
-    <?php 
-    $quizState = isset($_COOKIE['quiz_state']) ? json_decode($_COOKIE['quiz_state'], true) : null;
-    if ($quizState && $quizState['current_question'] < count($questions)): 
-    ?>
-        let timeLeft = 15;
-        const timerDisplay = document.getElementById('time');
-        const quizForm = document.getElementById('quiz-form');
+        <?php 
+        $quizState = isset($_COOKIE['quiz_state']) ? json_decode($_COOKIE['quiz_state'], true) : null;
+        if ($quizState && $quizState['current_question'] < count($questions)): 
+        ?>
+            let timeLeft = 15;
+            const timerDisplay = document.getElementById('time');
+            const quizForm = document.getElementById('quiz-form');
 
-        const timer = setInterval(() => {
-            timeLeft--;
-            timerDisplay.textContent = timeLeft;
+            const timer = setInterval(() => {
+                timeLeft--;
+                timerDisplay.textContent = timeLeft;
 
-            if (timeLeft <= 0) {
-                clearInterval(timer);
-                quizForm.submit(); // Soumettre automatiquement le formulaire
-            }
-        }, 1000);
-    <?php endif; ?>
+                if (timeLeft <= 0) {
+                    clearInterval(timer);
+                    quizForm.submit(); // Soumettre automatiquement le formulaire
+                }
+            }, 1000);
+        <?php endif; ?>
     </script>
 </body>
 </html>

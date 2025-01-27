@@ -1,0 +1,19 @@
+# Ignorer les fichiers de configuration spécifiques à l'environnement
+.env
+*.env
+
+# Ignorer les fichiers de cache
+cache/
+*.log
+
+# Ignorer les fichiers de résultats
+results.json
+
+# Ignorer les fichiers de l'IDE
+.vscode/
+.idea/
+*.swp
+
+# Ignorer les fichiers système
+.DS_Store
+Thumbs.db

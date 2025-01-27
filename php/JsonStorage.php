@@ -27,9 +27,12 @@ class JsonResultStorage implements ResultStorageInterface {
         return file_put_contents($this->resultsFile, json_encode($results, JSON_PRETTY_PRINT)) !== false;
     }
 
+
     public function getAllResults(): array {
-        return file_exists($this->resultsFile) 
+        $results = file_exists($this->resultsFile) 
             ? json_decode(file_get_contents($this->resultsFile), true) 
             : [];
+        
+        return is_array($results) ? $results : [];
     }
 }
